@@ -1,7 +1,6 @@
-import express, { response } from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
-import { nextTick, send } from 'process';
 
 (async () => {
 
@@ -30,7 +29,7 @@ import { nextTick, send } from 'process';
 
   /**************************************************************************** */
 
-  app.get('/filteredimage', async (req, res, next) => {
+  app.get('/filteredimage', async (req: Request, res: Response) => {
     
     const { query } = req;
 
